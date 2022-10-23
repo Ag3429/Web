@@ -1,0 +1,258 @@
+*{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body{
+   margin: 0;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon{
+    border-radius: 50%;
+}
+/* navbar-strt */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0);
+    z-index: 100;
+}
+header.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(51, 51, 51, 0.534);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 15px 15px rgba(0,0,0,0.05);
+    z-index: 100;
+}
+.logo{
+    /* margin-right: 20%; */
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: 0.5s ease-in-out;
+}
+
+.logo::before{
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    width: 100px;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+
+.logo:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.logo:hover{
+    color: rgb(255, 255, 255);
+}
+
+
+
+.group{
+    display: flex;
+    align-items: center;
+}
+
+header ul
+{
+    position: relative;
+    display: flex;
+    gap: 30px;
+    top: 10px;
+}
+header ul li {
+    list-style: none;
+}
+
+header ul li a{
+    position: relative;
+    text-decoration: none;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(253, 253, 253);
+}
+header ul li a::before{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+
+header ul li a:hover{
+    color: rgb(255, 255, 255);
+    
+}
+
+header ul li a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.menuToggle{
+    position: relative;
+    display: none;
+}
+
+/* navbar-end */
+
+/* mian-sectio-sta.rt */
+main{
+    width: 100%;
+    height: 100vh;
+    background-image: url("./assets/Stacks\ web\ home\ page.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+main h1{
+    color: white;
+    font-weight: 700;
+    font-family: sans-serif;
+    font-size: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main p{
+    color: rgba(255, 255, 255, 0.671);
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+main a{
+    color: red;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: sans-serif;
+    background-color: white;
+    /* padding: 20px 10px; */
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+main a:hover{
+    color: red;
+    box-shadow: 0 0.5px 1px rgba(255, 255, 255, 0.555);
+}
+
+
+
+
+
+
+
+/* main-end */
+
+/* about-strt */
+
+/* about-end */
+
+
+
+@media (max-width: 700px){
+    /* navbar-strt */
+    .menuToggle{
+        position: absolute;
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+        transform: translateX(30px);
+        color: white;
+        margin-left: -50px;
+        z-index: 10;
+    }
+    /* .closeToggle{
+        position: absolute;
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+        transform: translateX(30px);
+        margin-left: -50px;
+        z-index: 10;
+        visibility: hidden;
+    } */
+
+    header .navigation{
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 100%;
+    }
+    header.open .navigation{
+        top: 0px;
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        /* background: rgba(0, 0, 0, 0.151); */
+        background-image: url("./assets/Stacks\ web\ home\ page.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        padding: 40px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        /* transform: 0.5s; */
+    }
+    header.open .navigation li a{
+        font-size: 1.25em;
+    }
+    /* navbar-end */
+
+    /* main-strt */
+    main h1{
+        font-family: sans-serif;
+        font-size: 26px;
+        line-height: 38px;
+    }
+
+    main p{
+        font-size: 15px;
+    }
+    /* main-end */
+
+}
